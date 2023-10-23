@@ -7,7 +7,7 @@
  */
 void _sub(stack_t **queues, unsigned int line_number)
 {
-	int value;
+	int myvalue;
 	stack_t *temp;
 
 	if (*queues == NULL || (*queues)->next == NULL)
@@ -16,8 +16,8 @@ void _sub(stack_t **queues, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	temp = *queues;
-	value = temp->next->h - temp->h;
-	temp->next->h = value;
+	myvalue = temp->next->h - temp->h;
+	temp->next->h = myvalue;
 	*queues = temp->next;
 	free(temp);
 }

@@ -2,12 +2,12 @@
 
 /**
  * push_opcode - pushes an element onto the stack
- * @stack: pointer to the top of the stack
+ * @stack: pointer to top of the stack
  * @line_number: The line number of the opcode
  */
 void push_opcode(stack_t **stack, unsigned int line_number)
 {
-	int n;
+	int m;
 
 	if (glob.arg == NULL || !is_integer(glob.arg))
 	{
@@ -18,8 +18,8 @@ void push_opcode(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	n = atoi(glob.arg);
-	if (add_nodeint(stack, n) == NULL)
+	m = atoi(glob.arg);
+	if (add_nodeint(stack, m) == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		free_list(*stack);
